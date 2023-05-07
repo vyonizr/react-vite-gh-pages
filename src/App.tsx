@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
+  console.log(import.meta.env.DEV)
   const router = createBrowserRouter(
     [
       {
@@ -18,7 +19,7 @@ function App() {
         element: <div>About</div>,
       },
     ],
-    { basename: '/react-vite-gh-pages/' }
+    { basename: import.meta.env.DEV ? '/' : '/react-vite-gh-pages/' }
   )
 
   return <RouterProvider router={router} />
